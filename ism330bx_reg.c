@@ -1422,7 +1422,7 @@ int32_t ism330bx_odr_cal_reg_get(const stmdev_ctx_t *ctx, int8_t *val)
   * @retval          interface status (MANDATORY: return 0 -> no Error)
   *
   */
-int32_t ism330bx_xl_axis_set(const stmdev_ctx_t *ctx, ism330bx_xl_axis_t val)
+int32_t ism330bx_tdm_xl_axis_set(const stmdev_ctx_t *ctx, ism330bx_tdm_xl_axis_t val)
 {
   ism330bx_tdm_cfg1_t tdm_cfg1;
   int32_t ret;
@@ -1447,7 +1447,7 @@ int32_t ism330bx_xl_axis_set(const stmdev_ctx_t *ctx, ism330bx_xl_axis_t val)
   * @retval          interface status (MANDATORY: return 0 -> no Error)
   *
   */
-int32_t ism330bx_xl_axis_get(const stmdev_ctx_t *ctx, ism330bx_xl_axis_t *val)
+int32_t ism330bx_tdm_xl_axis_get(const stmdev_ctx_t *ctx, ism330bx_tdm_xl_axis_t *val)
 {
   ism330bx_tdm_cfg1_t tdm_cfg1;
   int32_t ret;

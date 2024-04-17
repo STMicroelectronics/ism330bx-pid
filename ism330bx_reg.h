@@ -2868,9 +2868,9 @@ typedef struct
   uint8_t x                             : 1;
   uint8_t y                             : 1;
   uint8_t z                             : 1;
-} ism330bx_xl_axis_t;
-int32_t ism330bx_xl_axis_set(const stmdev_ctx_t *ctx, ism330bx_xl_axis_t val);
-int32_t ism330bx_xl_axis_get(const stmdev_ctx_t *ctx, ism330bx_xl_axis_t *val);
+} ism330bx_tdm_xl_axis_t;
+int32_t ism330bx_tdm_xl_axis_set(const stmdev_ctx_t *ctx, ism330bx_tdm_xl_axis_t val);
+int32_t ism330bx_tdm_xl_axis_get(const stmdev_ctx_t *ctx, ism330bx_tdm_xl_axis_t *val);
 
 int32_t ism330bx_ln_pg_write(const stmdev_ctx_t *ctx, uint16_t address,
                              uint8_t *buf, uint8_t len);
