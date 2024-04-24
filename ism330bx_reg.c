@@ -2883,10 +2883,10 @@ int32_t ism330bx_pin_polarity_get(const stmdev_ctx_t *ctx,
   *
   */
 int32_t ism330bx_pin_int1_route_set(const stmdev_ctx_t *ctx,
-                                    ism330bx_pin_int1_route_t val)
+                                    ism330bx_pin_int_route_t val)
 {
   ism330bx_functions_enable_t functions_enable;
-  ism330bx_pin_int2_route_t  pin_int2_route;
+  ism330bx_pin_int_route_t  pin_int2_route;
   ism330bx_inactivity_dur_t inactivity_dur;
   ism330bx_emb_func_int1_t emb_func_int1;
   ism330bx_pedo_cmd_reg_t pedo_cmd_reg;
@@ -3119,7 +3119,7 @@ int32_t ism330bx_pin_int1_route_set(const stmdev_ctx_t *ctx,
   *
   */
 int32_t ism330bx_pin_int1_route_get(const stmdev_ctx_t *ctx,
-                                    ism330bx_pin_int1_route_t *val)
+                                    ism330bx_pin_int_route_t *val)
 {
   ism330bx_inactivity_dur_t inactivity_dur;
   ism330bx_emb_func_int1_t emb_func_int1;
@@ -3233,10 +3233,10 @@ int32_t ism330bx_pin_int1_route_get(const stmdev_ctx_t *ctx,
   *
   */
 int32_t ism330bx_pin_int2_route_set(const stmdev_ctx_t *ctx,
-                                    ism330bx_pin_int2_route_t val)
+                                    ism330bx_pin_int_route_t val)
 {
   ism330bx_functions_enable_t functions_enable;
-  ism330bx_pin_int1_route_t  pin_int1_route;
+  ism330bx_pin_int_route_t  pin_int1_route;
   ism330bx_inactivity_dur_t inactivity_dur;
   ism330bx_emb_func_int2_t emb_func_int2;
   ism330bx_pedo_cmd_reg_t pedo_cmd_reg;
@@ -3442,7 +3442,7 @@ int32_t ism330bx_pin_int2_route_set(const stmdev_ctx_t *ctx,
   *
   */
 int32_t ism330bx_pin_int2_route_get(const stmdev_ctx_t *ctx,
-                                    ism330bx_pin_int2_route_t *val)
+                                    ism330bx_pin_int_route_t *val)
 {
   ism330bx_inactivity_dur_t inactivity_dur;
   ism330bx_emb_func_int2_t emb_func_int2;
