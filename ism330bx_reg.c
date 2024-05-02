@@ -1279,6 +1279,7 @@ int32_t ism330bx_flag_data_ready_get(const stmdev_ctx_t *ctx,
   val->drdy_xl = status.xlda;
   val->drdy_gy = status.gda;
   val->drdy_temp = status.tda;
+  val->drdy_ah_qvar = status.ah_qvarda;
 
   return ret;
 }
@@ -3243,6 +3244,7 @@ int32_t ism330bx_pin_int2_route_set(const stmdev_ctx_t *ctx,
   ism330bx_int2_ctrl_t int2_ctrl;
   ism330bx_fsm_int2_t fsm_int2;
   ism330bx_mlc_int2_t mlc_int2;
+  ism330bx_ctrl7_t ctrl7;
   ism330bx_md2_cfg_t md2_cfg;
   ism330bx_ctrl4_t ctrl4;
   int32_t ret;
@@ -3332,6 +3334,13 @@ int32_t ism330bx_pin_int2_route_set(const stmdev_ctx_t *ctx,
     int2_ctrl.int2_cnt_bdr = val.fifo_bdr;
     int2_ctrl.int2_emb_func_endop = val.emb_func_stand_by;
     ret = ism330bx_write_reg(ctx, ISM330BX_INT2_CTRL, (uint8_t *)&int2_ctrl, 1);
+  }
+
+  if (ret == 0)
+  {
+    ret = ism330bx_read_reg(ctx, ISM330BX_CTRL7, (uint8_t *)&ctrl7, 1);
+    ctrl7.int2_drdy_ah_qvar = val.drdy_ah_qvar;
+    ret += ism330bx_write_reg(ctx, ISM330BX_CTRL7, (uint8_t *)&ctrl7, 1);
   }
 
   if (ret == 0)
@@ -3450,6 +3459,7 @@ int32_t ism330bx_pin_int2_route_get(const stmdev_ctx_t *ctx,
   ism330bx_int2_ctrl_t int2_ctrl;
   ism330bx_fsm_int2_t fsm_int2;
   ism330bx_mlc_int2_t mlc_int2;
+  ism330bx_ctrl7_t ctrl7;
   ism330bx_md2_cfg_t md2_cfg;
   ism330bx_ctrl4_t ctrl4;
   int32_t ret;
@@ -3488,6 +3498,11 @@ int32_t ism330bx_pin_int2_route_get(const stmdev_ctx_t *ctx,
     val->fifo_bdr = int2_ctrl.int2_cnt_bdr;
   }
 
+  if (ret == 0)
+  {
+    ret = ism330bx_read_reg(ctx, ISM330BX_CTRL7, (uint8_t *)&ctrl7, 1);
+    val->drdy_ah_qvar = ctrl7.int2_drdy_ah_qvar;
+  }
 
   if (ret == 0)
   {
