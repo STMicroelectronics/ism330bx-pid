@@ -58,7 +58,7 @@ This directory contains the ISM330BX component drivers.
 
 </div>
 
-<input type="checkbox" id="collapse-section3" checked aria-hidden="true">
+<input type="checkbox" id="collapse-section3" aria-hidden="true">
 <label for="collapse-section3" aria-hidden="true">V2.1.0 / 03-May-2024</label>
 <div>
 
@@ -71,8 +71,19 @@ This directory contains the ISM330BX component drivers.
 ##
 
 </div>
-:::
 
+<input type="checkbox" id="collapse-section4" checked aria-hidden="true">
+<label for="collapse-section4" aria-hidden="true">V3.0.0 / 23-Jun-2024</label>
+<div>
+
+## Main changes
+
+- Add defs for num_phy routines
+
+##
+
+</div>
+:::
 
 
 :::
